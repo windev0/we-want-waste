@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 // internal imports
 import type { SkipCardProps } from "../types/skip.type";
+import { useTheme } from "../../../common/hooks/useTheme";
 
 const SkipCard = ({ skip, onSelect, selected }: SkipCardProps) => {
   const {
@@ -16,8 +17,8 @@ const SkipCard = ({ skip, onSelect, selected }: SkipCardProps) => {
     allows_heavy_waste,
   } = skip;
   const totalPrice = price_before_vat + vat;
-
   const imageUrl = `/images/${size}-yarder-skip.jpg`;
+  const { theme } = useTheme();
 
   return (
     <div
