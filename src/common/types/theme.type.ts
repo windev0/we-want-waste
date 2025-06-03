@@ -12,6 +12,22 @@ type Theme = {
   warningColor: string;
   dangerColor: string;
   glowColor: string;
+
+  //   extends colors
+  red?: string;
+  redBg?: string;
+  green?: string;
+  greenBg?: string;
+  grayText?: string;
+  grayMuted?: string;
+  grayBg?: string;
+  grayMedium?: string;
+  grayBorder?: string;
+  orange?: string;
+  orangeBg?: string;
+  white?: string;
+  purple?: string;
+  purpleBg?: string;
 };
 
 type ThemeContextType = {

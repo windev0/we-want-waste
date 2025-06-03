@@ -1,16 +1,25 @@
 import "./App.css";
 import ThemeToggle from "./common/components/ThemeToggle";
+import { useTheme } from "./common/hooks/useTheme";
 import ChooseSkipPage from "./features/skip/pages/ChooseSkipPage";
 
-function App() {
+const App = () => {
+  const { theme } = useTheme();
+
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+    <body
+      className="min-h-screen transition-colors duration-300"
+      style={{
+        backgroundColor: theme?.backgroundColor,
+        color: theme?.textColor,
+      }}
+    >
       <header className="p-4 flex justify-end">
         <ThemeToggle />
       </header>
-      <ChooseSkipPage />;
-    </main>
+      <ChooseSkipPage />
+    </body>
   );
-}
+};
 
 export default App;

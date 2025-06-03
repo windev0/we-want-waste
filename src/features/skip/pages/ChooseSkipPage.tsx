@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 import type { Skip } from "../types/skip.type";
 import SkipCard from "../components/SkipCard";
 import BottomBar from "../components/BottomBar";
-
+import { useTheme } from "../../../common/hooks/useTheme";
 
 const ChooseSkipPage = () => {
   const [skips, setSkips] = useState<Skip[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     fetch(
@@ -21,29 +22,41 @@ const ChooseSkipPage = () => {
   }, []);
 
   const selectedSkip = skips.find((skip) => skip.id === selectedId) || null;
-
   return (
     <>
-        <div className="max-w-6xl mx-auto px-4 py-8">
-          <h2 className="text-3xl font-bold text-center mb-2">
-            Choose Your Skip Size
-          </h2>
-          <p className="text-center text-gray-500 mb-8">
-            Select the skip size that best suits your needs
-          </p>
+      <div
+        className="max-w-6xl mx-auto px-4 py-8 transition-colors duration-300"
+        style={{
+          backgroundColor: theme?.backgroundColor,
+          color: theme?.textColor,
+        }}
+      >
+        <h2
+          className="text-3xl font-bold text-center mb-2"
+          style={{ color: theme?.textColor }}
+        >
+          Choose Your Skip Size
+        </h2>
+        <p
+          className="text-center mb-8"
+          style={{ color: theme?.textColor + "AA" }}
+        >
+          Select the skip size that best suits your needs
+        </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {skips.map((skip) => (
-              <SkipCard
-                key={skip.id}
-                skip={skip}
-                onSelect={setSelectedId}
-                selected={skip.id === selectedId}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {skips.map((skip) => (
+            <SkipCard
+              key={skip.id}
+              skip={skip}
+              onSelect={setSelectedId}
+              selected={skip.id === selectedId}
+            />
+          ))}
         </div>
-        {selectedId && <BottomBar skip={selectedSkip} />}
+      </div>
+
+      {selectedId && <BottomBar skip={selectedSkip} />}
     </>
   );
 };
