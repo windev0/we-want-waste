@@ -3,6 +3,15 @@ type Theme = {
   secondaryColor: string;
   backgroundColor: string;
   textColor: string;
+  cardBackgroundColor: string;
+  borderColor: string;
+  hoverShadowColor: string;
+  surfaceColor: string;
+  mutedTextColor: string;
+  successColor: string;
+  warningColor: string;
+  dangerColor: string;
+  glowColor: string;
 };
 
 type ThemeContextType = {
