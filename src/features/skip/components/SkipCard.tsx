@@ -5,19 +5,19 @@ import clsx from "clsx";
 // internal imports
 import type { SkipCardProps } from "../types/skip.type";
 
-const SkipCard = ({
-  id,
-  size,
-  hire_period_days,
-  price_before_vat,
-  vat,
-  allowed_on_road,
-  allows_heavy_waste,
-  selected,
-  onSelect,
-}: SkipCardProps) => {
+const SkipCard = ({ skip, onSelect, selected }: SkipCardProps) => {
+  const {
+    id,
+    size,
+    hire_period_days,
+    price_before_vat,
+    vat,
+    allowed_on_road,
+    allows_heavy_waste,
+  } = skip;
   const totalPrice = price_before_vat + vat;
-  const imageUrl = `/skip${size}.png`;
+
+  const imageUrl = `/images/${size}-yarder-skip.jpg`;
 
   return (
     <div
