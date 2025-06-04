@@ -1,54 +1,61 @@
-# React + TypeScript + Vite
+# ♻️ WeWantWaste – Skip Size Selector Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="./screenshot.jpg" alt="Screenshot" width="1080"/>
+A redesigned version of the **"Choose your skip size"** page for the WeWantWaste platform.  
+Built with a focus on clean UI/UX, responsive design, and dynamic theme support (light/dark mode).  
+Fully functional and ready for integration.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 [Click here to view the live demo](https://we-want-waste-osjrule6s-windev0s-projects.vercel.app/skips)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📸 Preview
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+![Screenshot of Skip Selector](https://we-want-waste-osjrule6s-windev0s-projects.vercel.app/preview.jpg)  
+_(Add a screenshot or GIF of your app here if possible)_
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Tech Stack
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- **React 18** with **TypeScript**
+- **Vite** for lightning-fast development
+- **Tailwind CSS** for utility-first styling
+- **React Icons (Lucide)** for clean SVG icons
+- **Custom Theme Context** (light/dark theme switcher)
+- **Responsive Design** for all screen sizes
+
+---
+
+## ✨ Features
+
+- ✅ Visual redesign of skip cards
+- 🎨 Dynamic theming (light/dark mode)
+- 📱 Fully responsive layout
+- 🧠 Context API for global theme management
+- 🧩 Component-based structure with clean separation of concerns
+
+---
+
+## 🌗 Theme Support
+
+The app supports both **light** and **dark** modes.  
+A `ThemeProvider` wraps the app and allows dynamic switching with a `useTheme()` hook, applying styles throughout via React and inline dynamic styling.
+
+---
+
+## 🔧 Installation & Running Locally
+
+```bash
+# Clone the project
+git clone https://github.com/your-username/wewantwaste-skip-selector.git
+cd wewantwaste-skip-selector
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```

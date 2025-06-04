@@ -99,7 +99,7 @@ const SkipCard = ({ skip, onSelect, selected }: SkipCardProps) => {
           }}
         >
           <Truck className="w-4 h-4" />
-          On road
+          On the road
         </span>
 
         {/* allow heavy badge */}
