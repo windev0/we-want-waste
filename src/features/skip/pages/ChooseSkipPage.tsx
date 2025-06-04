@@ -8,6 +8,7 @@ import BottomBar from "../components/BottomBar";
 import { useTheme } from "../../../common/hooks/useTheme";
 import { useGetSkips } from "../services/useGetSkips";
 import { ClipLoader } from "react-spinners";
+import { AlertCircle } from "lucide-react";
 
 const ChooseSkipPage = () => {
   const [skips, setSkips] = useState<Skip[]>([]);
@@ -60,16 +61,23 @@ const ChooseSkipPage = () => {
           Select the skip size that best suits your needs
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {skips.map((skip) => (
-            <SkipCard
-              key={skip.id}
-              skip={skip}
-              onSelect={setSelectedId}
-              selected={skip.id === selectedId}
-            />
-          ))}
-        </div>
+        {skips.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {skips.map((skip) => (
+              <SkipCard
+                key={skip.id}
+                skip={skip}
+                onSelect={setSelectedId}
+                selected={skip.id === selectedId}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-10 p-4 flex justify-between gap-2">
+            <AlertCircle size={40} />
+            <p>Check your internet connection and try reaload</p>
+          </div>
+        )}
       </div>
 
       {selectedId && <BottomBar skip={selectedSkip} />}
