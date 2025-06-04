@@ -6,22 +6,38 @@ import type { Skip } from "../types/skip.type";
 import SkipCard from "../components/SkipCard";
 import BottomBar from "../components/BottomBar";
 import { useTheme } from "../../../common/hooks/useTheme";
+import { useGetSkips } from "../services/useGetSkips";
+import { ClipLoader } from "react-spinners";
 
 const ChooseSkipPage = () => {
   const [skips, setSkips] = useState<Skip[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const { data, isError, error, isLoading, isSuccess } = useGetSkips();
   const { theme } = useTheme();
 
   useEffect(() => {
-    fetch(
-      "https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft"
-    )
-      .then((res) => res.json())
-      .then((data) => setSkips(data))
-      .catch((err) => console.error("Erreur chargement skips:", err));
-  }, []);
+    if (isSuccess && data) {
+      setSkips(data);
+    } else if (isError) {
+      console.error("Error fetching skips:", error);
+    }
+  }, [data, isSuccess, isLoading, isError]);
 
   const selectedSkip = skips.find((skip) => skip.id === selectedId) || null;
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <ClipLoader
+          color={theme?.primaryColor}
+          loading={isLoading}
+          size={150}
+          aria-label="Loading skips"
+          data-testid="loader"
+        />
+      </div>
+    );
+  }
   return (
     <>
       <div
