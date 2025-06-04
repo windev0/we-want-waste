@@ -54,8 +54,8 @@ A `ThemeProvider` wraps the app and allows dynamic switching with a `useTheme()`
 
 ```bash
 # Clone the project
-git clone https://github.com/your-username/wewantwaste-skip-selector.git
-cd wewantwaste-skip-selector
+git clone https://github.com/windev0/we-want-waste.git
+cd we-want-waste
 
 # Install dependencies
 npm install
