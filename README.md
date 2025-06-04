@@ -1,6 +1,6 @@
 # ♻️ WeWantWaste – Skip Size Selector Redesign
 
-<img src="./_screenshot.png" alt="Screenshot" width="1080"/>
+<img src="./public/screenshots/all_palteforms.png" alt="Screenshot" width="1080"/>
 A redesigned version of the **"Choose your skip size"** page for the WeWantWaste platform.  
 Built with a focus on clean UI/UX, responsive design, and dynamic theme support (light/dark mode).  
 Fully functional and ready for integration.

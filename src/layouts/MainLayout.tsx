@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useTheme } from "../common/hooks/useTheme";
-import ThemeToggle from "../common/components/ThemeToggle";
+import NavBar from "../common/components/NavBar";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme();
@@ -15,9 +15,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
     >
       <header className="p-4 flex justify-end">
         {/* Navigation} */}
-
-        {/* ThemeToggle */}
-        <ThemeToggle />
+        <NavBar />
       </header>
       <main>{children}</main>
     </body>
