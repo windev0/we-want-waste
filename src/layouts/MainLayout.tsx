@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { useTheme } from "../common/hooks/useTheme";
 import NavBar from "../common/components/NavBar";
+import ScrollToTopButton from "../common/components/ScrollToTopButton";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme();
@@ -18,6 +19,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
         <NavBar />
       </header>
       <main>{children}</main>
+      <ScrollToTopButton theme={theme} />
     </body>
   );
 };
