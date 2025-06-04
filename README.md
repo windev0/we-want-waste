@@ -13,21 +13,26 @@ Fully functional and ready for integration.
 
 ## 📸 Preview
 <!-- preview gif -->
-
 ![Skip Selector](./public/animations/preview.gif) 
-_(Add a screenshot or GIF of your app here if possible)_
 
 ---
 
 ## ⚙️ Tech Stack
 
-- **React 18** with **TypeScript**
-- **Vite** for lightning-fast development
+## ⚙️ Tech Stack
+
+- **React 19** with **React DOM**
+- **TypeScript** (strictly typed components)
+- **Vite** for fast development and build
 - **Tailwind CSS** for utility-first styling
-- **React Icons (Lucide)** for clean SVG icons
+- **React Router DOM v7** for routing
+- **TanStack React Query v5** for data fetching and caching
+- **Axios** for API communication
+- **clsx** for conditional class handling
+- **Lucide React** for clean, customizable SVG icons
+- **React Spinners** for loading indicators
 - **Custom Theme Context** (light/dark theme switcher)
 - **Responsive Design** for all screen sizes
-
 ---
 
 ## ✨ Features
