@@ -32,13 +32,13 @@ const NavBar = () => {
   const getLinkStyle = (index: number): any => {
     if (index < currentStep) {
       return {
-        color: theme?.white,
+        color: themeValue == ThemeValues.DARK ? theme?.white : "#333",
         fontWeight: 600,
         // fontSize: "1rem",
       };
     } else if (index === currentStep) {
       return {
-        color: theme?.white,
+        color: themeValue == ThemeValues.DARK ? theme?.white : "#333",
         textDecoration: "underline",
         // fontSize: "1rem",
       };
@@ -63,13 +63,13 @@ const NavBar = () => {
       {/* Brand */}
       <a
         href="/"
-        className="text-xl font-bold"
+        className="hidden text-xl font-bold xl:inline"
         style={{ color: theme?.primaryColor }}
       >
         WeWantWaste
       </a>
 
-      {/* Hamburger */}
+      {/* Hamburger - visible on mobile */}
       <div className="md:hidden">
         <button
           type="button"
@@ -98,46 +98,67 @@ const NavBar = () => {
         {steps.map((step, index) => {
           const Icon = step.icon;
           return (
-            <a href={step.href} style={getLinkStyle(index)}>
-              <li key={step.label} className="flex justify-between">
-                <div  className="flex justify-between">
-                  <StepChip index={index} theme={theme} />
-                  <Icon size={18} style={{ color: theme?.white }} />
-                </div>
-                {step.label}
-              </li>
-            </a>
+            <li key={step.label} className="list-none">
+              <a
+                href={step.href}
+                style={getLinkStyle(index)}
+                className="flex items-center gap-2"
+              >
+                <StepChip index={index} theme={theme} />
+                <Icon
+                  size={18}
+                  style={{
+                    color:
+                      themeValue == ThemeValues.DARK ? theme?.white : "#333",
+                  }}
+                  className="hidden lg:inline"
+                />
+                <span>{step.label}</span>
+              </a>
+            </li>
           );
         })}
       </ul>
-      <div className="hidden md:block">
+
+      {/* Desktop ThemeToggle */}
+      <div className="hidden md:block ml-3">
         <ThemeToggle />
       </div>
 
       {/* Mobile Nav */}
       {menuOpen && (
-        <>
-          <ul
-            className="absolute top-16 left-0 w-full flex flex-col gap-4 text-sm font-medium list-none m-0 p-6 md:hidden z-50"
-            style={{
-              backgroundColor:
-                themeValue === ThemeValues.DARK
-                  ? "#2d323b"
-                  : theme?.backgroundColor,
-              color: theme?.textColor,
-            }}
-          >
-            {steps.map((step, index) => (
-              <li key={step.label}>
-                <a href={step.href} style={getLinkStyle(index)}>
+        <ul
+          className="absolute top-16 left-0 w-full flex flex-col gap-4 text-sm font-medium list-none m-0 p-6 md:hidden z-50"
+          style={{
+            backgroundColor:
+              themeValue === ThemeValues.DARK
+                ? "#2d323b"
+                : theme?.backgroundColor,
+            color: theme?.textColor,
+          }}
+        >
+          {steps.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <li key={step.label} className="list-none">
+                <a
+                  href={step.href}
+                  style={getLinkStyle(index)}
+                  className="flex items-center gap-2"
+                >
                   <StepChip index={index} theme={theme} />
-                  {step.label}
+                  <Icon
+                    size={18}
+                    style={{ color: theme?.white }}
+                    className="hidden md:w-full"
+                  />
+                  <span>{step.label}</span>
                 </a>
               </li>
-            ))}
-            <ThemeToggle />
-          </ul>
-        </>
+            );
+          })}
+          <ThemeToggle />
+        </ul>
       )}
     </nav>
   );

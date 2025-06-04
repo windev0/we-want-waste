@@ -12,13 +12,13 @@ const StepChip = ({ index, theme }: StepChipProps) => {
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        width: 28,
-        height: 28,
+        width: 21,
+        height: 21,
         borderRadius: "50%",
         background: theme?.primaryColor,
         color: "#fff",
         fontWeight: 700,
-        fontSize: "1.1rem",
+        fontSize: "1rem",
         marginRight: 8,
       }}
     >
