@@ -1,6 +1,6 @@
 # ♻️ WeWantWaste – Skip Size Selector Redesign
 
-<img src="./screenshot.jpg" alt="Screenshot" width="1080"/>
+<img src="./screenshot.png" alt="Screenshot" width="1080"/>
 A redesigned version of the **"Choose your skip size"** page for the WeWantWaste platform.  
 Built with a focus on clean UI/UX, responsive design, and dynamic theme support (light/dark mode).  
 Fully functional and ready for integration.
@@ -12,8 +12,9 @@ Fully functional and ready for integration.
 ---
 
 ## 📸 Preview
+<!-- preview gif -->
 
-![Screenshot of Skip Selector](https://we-want-waste-osjrule6s-windev0s-projects.vercel.app/preview.jpg)  
+![Skip Selector](./public/animations/preview.gif) 
 _(Add a screenshot or GIF of your app here if possible)_
 
 ---
