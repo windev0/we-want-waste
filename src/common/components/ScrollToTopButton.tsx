@@ -27,7 +27,7 @@ const ScrollToTopButton = ({ theme }: { theme: Theme | null }) => {
     <button
       onClick={scrollToTop}
       color={theme?.primaryColor}
-      className={`cursor-pointer fixed bottom-6 right-6 p-3 rounded-full shadow-lg transition-opacity duration-300 ${
+      className={`cursor-pointer z-400 fixed bottom-6 right-6 p-3 rounded-full shadow-lg transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       } hover:scale-110`}
       aria-label="Scroll to top"
