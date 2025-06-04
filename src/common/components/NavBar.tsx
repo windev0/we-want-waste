@@ -12,14 +12,15 @@ import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "../hooks/useTheme";
 import { ThemeValues } from "../utils/constants/theme.constants";
 import StepChip from "./StepChip";
+import Brand from "./Brand";
 
 const steps = [
-  { label: "Postcode", href: "/postcode", icon: MapPin },
-  { label: "Waste Type", href: "/waste-type", icon: Trash2 },
-  { label: "Select Skip", href: "/skips", icon: Truck },
-  { label: "Permit Check", href: "/permit-check", icon: ShieldCheck },
-  { label: "Choose Date", href: "/choose-date", icon: Calendar },
-  { label: "Payment", href: "/payment", icon: CreditCard },
+  { label: "Postcode", href: "#", icon: MapPin },
+  { label: "Waste Type", href: "#", icon: Trash2 },
+  { label: "Select Skip", href: "#", icon: Truck },
+  { label: "Permit Check", href: "#", icon: ShieldCheck },
+  { label: "Choose Date", href: "#", icon: Calendar },
+  { label: "Payment", href: "#", icon: CreditCard },
 ];
 
 // Simule l’étape actuelle (ex: 1 = "Pricing")
@@ -61,16 +62,10 @@ const NavBar = () => {
       }}
     >
       {/* Brand */}
-      <a
-        href="/"
-        className="hidden text-xl font-bold xl:inline"
-        style={{ color: theme?.primaryColor }}
-      >
-        WeWantWaste
-      </a>
+      <Brand theme={theme} style="hidden text-xl font-bold xl:inline" />
 
       {/* Hamburger - visible on mobile */}
-      <div className="md:hidden">
+      <div className="md:hidden flex items-center justify-between w-full">
         <button
           type="button"
           className="focus:outline-none"
@@ -91,6 +86,9 @@ const NavBar = () => {
             />
           </svg>
         </button>
+
+        {/* Brand for mobile */}
+        <Brand theme={theme} style="font-bold xl:inline" />
       </div>
 
       {/* Desktop Nav */}
