@@ -1,14 +1,25 @@
 import { useState } from "react";
+import {
+  Calendar,
+  CreditCard,
+  MapPin,
+  ShieldCheck,
+  Trash2,
+  Truck,
+} from "lucide-react";
+
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "../hooks/useTheme";
 import { ThemeValues } from "../utils/constants/theme.constants";
 import StepChip from "./StepChip";
 
 const steps = [
-  { label: "Skips", href: "/skips" },
-  { label: "Pricing", href: "#" },
-  { label: "Contact", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Postcode", href: "/postcode", icon: MapPin },
+  { label: "Waste Type", href: "/waste-type", icon: Trash2 },
+  { label: "Select Skip", href: "/skips", icon: Truck },
+  { label: "Permit Check", href: "/permit-check", icon: ShieldCheck },
+  { label: "Choose Date", href: "/choose-date", icon: Calendar },
+  { label: "Payment", href: "/payment", icon: CreditCard },
 ];
 
 // Simule l’étape actuelle (ex: 1 = "Pricing")
@@ -21,13 +32,15 @@ const NavBar = () => {
   const getLinkStyle = (index: number): any => {
     if (index < currentStep) {
       return {
-        color: theme?.primaryColor,
+        color: theme?.white,
         fontWeight: 600,
+        // fontSize: "1rem",
       };
     } else if (index === currentStep) {
       return {
-        color: theme?.primaryColor,
+        color: theme?.white,
         textDecoration: "underline",
+        // fontSize: "1rem",
       };
     } else {
       return {
@@ -82,16 +95,24 @@ const NavBar = () => {
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex items-center gap-6 text-sm font-medium list-none m-0 p-0">
-        {steps.map((step, index) => (
-          <li key={step.label}>
+        {steps.map((step, index) => {
+          const Icon = step.icon;
+          return (
             <a href={step.href} style={getLinkStyle(index)}>
-              <StepChip index={index} theme={theme} />
-              {step.label}
+              <li key={step.label} className="flex justify-between">
+                <div  className="flex justify-between">
+                  <StepChip index={index} theme={theme} />
+                  <Icon size={18} style={{ color: theme?.white }} />
+                </div>
+                {step.label}
+              </li>
             </a>
-          </li>
-        ))}
-        <ThemeToggle />
+          );
+        })}
       </ul>
+      <div className="hidden md:block">
+        <ThemeToggle />
+      </div>
 
       {/* Mobile Nav */}
       {menuOpen && (
