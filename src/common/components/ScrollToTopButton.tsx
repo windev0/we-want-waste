@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react"; // Ou une autre icône
+import { ArrowUp } from "lucide-react";
+
+
 import type { Theme } from "../types/theme.type";
 
 const ScrollToTopButton = ({ theme }: { theme: Theme | null }) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Affiche le bouton au scroll
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 300);
