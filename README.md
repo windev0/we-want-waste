@@ -7,7 +7,7 @@ Fully functional and ready for integration.
 
 ## 🚀 Live Demo
 
-👉 [Click here to view the live demo](https://we-want-waste-git-main-windev0s-projects.vercel.app/)
+👉 [Click here to view the live demo](https://we-want-waste-nine.vercel.app/)
 
 ---
 
