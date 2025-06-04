@@ -73,9 +73,9 @@ const ChooseSkipPage = () => {
             ))}
           </div>
         ) : (
-          <div className="mt-10 p-4 flex justify-between gap-2">
-            <AlertCircle size={40} />
-            <p>Check your internet connection and try reaload</p>
+          <div className="mt-10 p-4 flex  justify-center gap-2">
+            <AlertCircle size={25} />
+            <p>Check your internet connection and reaload</p>
           </div>
         )}
       </div>
