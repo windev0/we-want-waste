@@ -7,7 +7,7 @@ import {
   DEFAULT_THEME,
   lightTheme,
   ThemeValues,
-} from "../utils/constants/theme.constants";
+} from "../utils";
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 

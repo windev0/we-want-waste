@@ -9,10 +9,11 @@ import {
 } from "lucide-react";
 
 import ThemeToggle from "./ThemeToggle";
-import { useTheme } from "../hooks/useTheme";
-import { ThemeValues } from "../utils/constants/theme.constants";
 import StepChip from "./StepChip";
 import Brand from "./Brand";
+import { useTheme } from "../hooks/useTheme";
+import { ThemeValues } from "../utils";
+
 
 const steps = [
   { label: "Postcode", href: "#", icon: MapPin },
@@ -23,7 +24,7 @@ const steps = [
   { label: "Payment", href: "#", icon: CreditCard },
 ];
 
-// Simule l’étape actuelle (ex: 1 = "Pricing")
+// simulates the current step (ex: 1 = "pricing")
 const currentStep = 1;
 
 const NavBar = () => {

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { DEFAULT_THEME, ThemeValues } from "../utils/constants/theme.constants";
+import { DEFAULT_THEME, ThemeValues } from "../utils";
 import { ThemeContext } from "../context/ThemeContext";
 
 export const useTheme = () => {

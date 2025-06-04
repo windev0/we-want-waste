@@ -7,9 +7,9 @@ import {
 
 import "./App.css";
 import MainLayout from "./layouts/MainLayout";
-import NotFound from "./common/components/NotFound";
 import ChooseSkipPage from "./features/skip/pages/ChooseSkipPage";
 import { ROUTES } from "./configs/router";
+import { NotFound } from "./common/components";
 
 const App = () => {
   return (

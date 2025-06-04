@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useTheme } from "../common/hooks/useTheme";
-import NavBar from "../common/components/NavBar";
-import ScrollToTopButton from "../common/components/ScrollToTopButton";
+import { ScrollToTopButton } from "../common/components";
+import { NavBar } from "../common/components";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   const { theme } = useTheme();

@@ -42,13 +42,13 @@ const lightTheme: Theme = {
 const darkTheme: Theme = {
   primaryColor: "#007bff",
   secondaryColor: "#00bcd4",
-  backgroundColor: "#23272f", // moins noir, plus gris foncé
-  cardBackgroundColor: "#2f343c", // moins noir
+  backgroundColor: "#23272f", 
+  cardBackgroundColor: "#2f343c",
   textColor: "#f1f1f1",
-  borderColor: "#5a5f69", // plus clair
+  borderColor: "#5a5f69",
   hoverShadowColor: "#66b2ff33",
-  surfaceColor: "#353a42", // moins noir
-  mutedTextColor: "#b0b3b8", // plus clair
+  surfaceColor: "#353a42", 
+  mutedTextColor: "#b0b3b8",
   successColor: "#28d17c",
   warningColor: "#f1c40f",
   dangerColor: "#e74c3c",
